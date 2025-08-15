@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Transformers for Time Series Forecasting",
+    "journal": "Journal of AI Research",
+    "publication_date": "2024-10-12",
+    "authors": ["Alice Wang", "Ravi Kumar"],
+    "category": ["Machine Learning", "Time Series"],
+    "tags": ["transformers", "forecasting", "deep-learning"],
+    "doi": "10.1000/jair.2024.12345",
+    "abstract": "We explore transformer architectures for multi-horizon time series forecasting and compare them with classical baselines."
+  },
+  {
+    "title": "Efficient Graph Neural Networks on Large-Scale Data",
+    "journal": "IEEE TPAMI",
+    "publication_date": "2025-02-03",
+    "authors": ["Maria Lopez", "Kenji Tanaka"],
+    "category": ["Graph Learning"],
+    "tags": ["gnn", "scalability", "sampling"],
+    "doi": "10.1109/TPAMI.2025.54321",
+    "abstract": "This paper presents scalable GNN techniques using subgraph sampling and memory-efficient training strategies."
+  },
+  {
+    "title": "Retrieval-Augmented Generation for Scientific QA",
+    "journal": "Nature Machine Intelligence",
+    "publication_date": "2025-05-28",
+    "authors": ["Jonas Becker", "Li Wei"],
+    "category": ["NLP", "Information Retrieval"],
+    "tags": ["rag", "llm", "qa"],
+    "doi": "10.1038/s41557-025-00001",
+    "abstract": "We evaluate RAG pipelines for domain-specific scientific question answering with ablation on retrieval depth and reranking."
+  }
+]
