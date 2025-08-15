@@ -2,10 +2,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
-import Dashboard from "./pages/Dashboard";
 import Articles from "./pages/Articles";
-import Settings from "./pages/Settings";
 import useDarkMode from "./hooks/useDarkMode";
+import Dashboard from "./pages/Dashboard";
+import Settings from "./pages/Settings";
+
 
 export default function App() {
   const { darkMode, toggleDarkMode } = useDarkMode();
