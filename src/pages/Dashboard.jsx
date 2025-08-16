@@ -1,8 +1,24 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaFilter, FaEye } from "react-icons/fa";
 import FilterModal from "../components/FilterModal";
 import useFilters from "../hooks/useFilters";
 import data from "../data/dummyData.json";
+
+const actionButtons = [
+    {
+        label: "Set Filters",
+        icon: <FaFilter />,
+        onClick: (setOpen) => setOpen(true),
+        style: "bg-violet-600 text-white hover:bg-violet-700"
+    },
+    {
+        label: "View Articles",
+        icon: <FaEye />,
+        onClick: (_, navigate) => navigate("/articles"),
+        style: "bg-gray-200 dark:bg-gray-700"
+    }
+];
 
 export default function Dashboard() {
     const navigate = useNavigate();
@@ -25,21 +41,17 @@ export default function Dashboard() {
 
             <div className="flex items-center justify-center">
                 <div className="flex gap-3">
-                    <button
-                        onClick={() => setOpen(true)}
-                        className="px-3 py-1.5 rounded bg-violet-600 text-white hover:bg-violet-700"
-                    >
-                        Set Filters
-                    </button>
-                    <button
-                        onClick={() => navigate("/articles")}
-                        className="px-3 py-1.5 rounded bg-gray-200 dark:bg-gray-700"
-                    >
-                        View Articles
-                    </button>
+                    {actionButtons.map((btn) => (
+                        <ActionButton
+                            key={btn.label}
+                            label={btn.label}
+                            icon={btn.icon}
+                            style={btn.style}
+                            onClick={() => btn.onClick(setOpen, navigate)}
+                        />
+                    ))}
                 </div>
             </div>
-
 
             <FilterModal
                 isOpen={open}
@@ -50,5 +62,17 @@ export default function Dashboard() {
                 initial={filters}
             />
         </div>
+    );
+}
+
+function ActionButton({ label, icon, onClick, style }) {
+    return (
+        <button
+            onClick={onClick}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded ${style}`}
+        >
+            <span className="text-lg">{icon}</span>
+            <span>{label}</span>
+        </button>
     );
 }

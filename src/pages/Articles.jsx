@@ -3,6 +3,7 @@ import ArticleCard from "../components/ArticleCard";
 import Loader from "../components/Loader";
 import FilterModal from "../components/FilterModal";
 import FilterBar from "../components/FilterBar";
+import Pagination from "../components/Pagination";
 import useFilters from "../hooks/useFilters";
 import data from "../data/dummyData.json";
 
@@ -11,10 +12,12 @@ export default function Articles() {
     const [showModal, setShowModal] = useState(!filters || (!filters.tags?.length && !filters.categories?.length && !filters.startDate && !filters.endDate));
     const [loading, setLoading] = useState(true);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 6;
+
     const availableTags = useMemo(() => [...new Set(data.flatMap(a => a.tags))], []);
     const availableCategories = useMemo(() => [...new Set(data.flatMap(a => a.category))], []);
 
-    // Simulate fetch delay
     useEffect(() => {
         const t = setTimeout(() => setLoading(false), 800);
         return () => clearTimeout(t);
@@ -38,6 +41,10 @@ export default function Articles() {
         });
     }, [filters]);
 
+    // Pagination logic
+    const totalPages = Math.ceil(filtered.length / itemsPerPage);
+    const paginatedArticles = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
     const apply = (f) => updateFilters(f);
 
     if (loading) return <Loader />;
@@ -51,11 +58,19 @@ export default function Articles() {
             {filtered.length === 0 ? (
                 <p className="text-gray-600 dark:text-gray-400">No articles match your filters.</p>
             ) : (
-                <div className="flex flex-wrap justify-start gap-6">
-                    {filtered.map((article, idx) => (
-                        <ArticleCard key={idx} article={article} />
-                    ))}
-                </div>
+                <>
+                    <div className="flex flex-wrap justify-start gap-6">
+                        {paginatedArticles.map((article, idx) => (
+                            <ArticleCard key={idx} article={article} />
+                        ))}
+                    </div>
+
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={setCurrentPage}
+                    />
+                </>
             )}
 
             <FilterModal
