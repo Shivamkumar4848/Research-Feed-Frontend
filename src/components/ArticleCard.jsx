@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AuthorAvatar from "../components/Avatar";
 
 export default function ArticleCard({ article }) {
     const [loading, setLoading] = useState(false);
@@ -32,7 +33,7 @@ export default function ArticleCard({ article }) {
     };
 
     return (
-        <div className="w-80 h-[420px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg">
+        <div className="w-80 h-[420px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg relative">
             <div className="perspective w-full h-full">
                 <div
                     className={`relative w-full h-full transition-transform duration-700 ${isFlipped ? "rotate-y-180" : ""}`}
@@ -49,10 +50,13 @@ export default function ArticleCard({ article }) {
                         <p className="text-gray-500 dark:text-gray-400 text-xs mb-1">
                             {article.journal} • {article.publication_date}
                         </p>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
-                            <span className="font-medium">Authors:</span>{" "}
-                            {(article.authors || []).join(", ")}
-                        </p>
+
+                        {/* Author Avatars */}
+                        <div className="flex flex-wrap gap-2 mb-2">
+                            {(article.authors || []).map((author, idx) => (
+                                <AuthorAvatar key={idx} name={author} />
+                            ))}
+                        </div>
 
                         <div className="mb-2 flex flex-wrap gap-2">
                             {(article.category || []).map((cat, idx) => (

@@ -28,5 +28,105 @@
     "tags": ["rag", "llm", "qa"],
     "doi": "10.1038/s41557-025-00001",
     "abstract": "We evaluate RAG pipelines for domain-specific scientific question answering with ablation on retrieval depth and reranking."
+  },
+  {
+    "title": "AI in Healthcare",
+    "journal": "Journal of Medical AI",
+    "publication_date": "2025-03-12",
+    "authors": ["John Doe", "Jane Smith"],
+    "doi": "10.1234/example1",
+    "abstract": "This study explores AI applications in diagnosis and treatment planning.",
+    "tags": ["AI", "Healthcare", "Machine Learning"],
+    "category": ["Medical Technology", "Artificial Intelligence"]
+  },
+  {
+    "title": "Neural Networks in Cardiology",
+    "journal": "Cardio Science",
+    "publication_date": "2025-02-10",
+    "authors": ["Alex Johnson"],
+    "doi": "10.1234/example2",
+    "abstract": "We analyze neural networks for heart disease detection and prediction.",
+    "tags": ["Neural Networks", "Cardiology"],
+    "category": ["Heart Health", "Medical Technology"]
+  },
+  {
+    "title": "Blockchain in Supply Chain",
+    "journal": "Logistics Tech Journal",
+    "publication_date": "2025-01-25",
+    "authors": ["Maria Lopez", "Chen Wei"],
+    "doi": "10.1234/example3",
+    "abstract": "Exploring blockchain's role in enhancing transparency and efficiency in supply chains.",
+    "tags": ["Blockchain", "Supply Chain", "Transparency"],
+    "category": ["Logistics", "Blockchain Technology"]
+  },
+  {
+    "title": "Climate Change Impact on Agriculture",
+    "journal": "Global Environmental Studies",
+    "publication_date": "2024-12-05",
+    "authors": ["Priya Sharma", "Michael Brown"],
+    "doi": "10.1234/example4",
+    "abstract": "An overview of climate change effects on global food production.",
+    "tags": ["Climate Change", "Agriculture", "Sustainability"],
+    "category": ["Environmental Science", "Agricultural Studies"]
+  },
+  {
+    "title": "Quantum Computing for Cryptography",
+    "journal": "Journal of Quantum Technologies",
+    "publication_date": "2025-04-01",
+    "authors": ["Ethan Wright", "Sofia Patel"],
+    "doi": "10.1234/example5",
+    "abstract": "Evaluating quantum algorithms for secure encryption and decryption methods.",
+    "tags": ["Quantum Computing", "Cryptography", "Security"],
+    "category": ["Computer Science", "Cybersecurity", "Quantum Technology"]
+  },
+  {
+    "title": "Renewable Energy Storage Solutions",
+    "journal": "Energy Innovations",
+    "publication_date": "2025-03-20",
+    "authors": ["Amina Khan", "Carlos Mendes"],
+    "doi": "10.1234/example6",
+    "abstract": "A comprehensive review of battery technologies for renewable energy storage.",
+    "tags": ["Renewable Energy", "Batteries", "Sustainability"],
+    "category": ["Energy", "Environmental Science"]
+  },
+  {
+    "title": "Machine Learning in Finance",
+    "journal": "FinTech Review",
+    "publication_date": "2025-02-28",
+    "authors": ["Liam O'Connor", "Haruto Tanaka"],
+    "doi": "10.1234/example7",
+    "abstract": "Application of supervised and unsupervised learning techniques in financial risk assessment.",
+    "tags": ["Machine Learning", "Finance", "Risk Management"],
+    "category": ["Finance", "Artificial Intelligence"]
+  },
+  {
+    "title": "Deep Sea Exploration Technologies",
+    "journal": "Marine Science Today",
+    "publication_date": "2025-01-15",
+    "authors": ["Olivia Martinez"],
+    "doi": "10.1234/example8",
+    "abstract": "Innovations in robotics and AI for deep-sea environmental monitoring.",
+    "tags": ["Robotics", "Oceanography", "Marine Life"],
+    "category": ["Marine Science", "Robotics"]
+  },
+  {
+    "title": "Augmented Reality in Education",
+    "journal": "EdTech Advances",
+    "publication_date": "2024-11-30",
+    "authors": ["Noah Kim", "Emily Davis"],
+    "doi": "10.1234/example9",
+    "abstract": "Assessing the effectiveness of AR tools in improving student engagement and retention.",
+    "tags": ["Augmented Reality", "Education", "Technology"],
+    "category": ["Education Technology", "Augmented Reality"]
+  },
+  {
+    "title": "Space-Based Solar Power Systems",
+    "journal": "Aerospace Energy Journal",
+    "publication_date": "2024-10-22",
+    "authors": ["Rajesh Gupta", "Hannah Lee"],
+    "doi": "10.1234/example10",
+    "abstract": "Feasibility study of harnessing solar energy from space and transmitting it to Earth.",
+    "tags": ["Solar Power", "Space", "Energy"],
+    "category": ["Aerospace", "Renewable Energy"]
   }
 ]
