@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaFilter, FaEye } from "react-icons/fa";
+import { FaBookReader } from "react-icons/fa";
 import FilterModal from "../components/FilterModal";
 import useFilters from "../hooks/useFilters";
 import data from "../data/dummyData.json";
@@ -33,12 +34,21 @@ export default function Dashboard() {
     };
 
     return (
-        <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Dashboard</h2>
-            <p className="text-gray-700 dark:text-gray-300">
-                Welcome! Set your preferred filters below — we’ll use them across the app.
-            </p>
+        <div className="space-y-6 flex flex-col items-center justify-center min-h-[80vh] text-center">
+            {/* Heading */}
+            <div>
+                <h2 className="text-3xl font-bold mb-2">Dashboard</h2>
+                <p className="text-gray-700 dark:text-gray-300 max-w-md">
+                    Welcome! Set your preferred filters below — we’ll use them across the app.
+                </p>
+            </div>
 
+            {/* Illustration / Vector */}
+            <div className="flex justify-center items-center">
+                <FaBookReader className="text-violet-600 dark:text-violet-400 text-[120px]" />
+            </div>
+
+            {/* Action Buttons */}
             <div className="flex items-center justify-center">
                 <div className="flex gap-3">
                     {actionButtons.map((btn) => (
@@ -69,7 +79,7 @@ function ActionButton({ label, icon, onClick, style }) {
     return (
         <button
             onClick={onClick}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded ${style}`}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg shadow-md transition-all ${style}`}
         >
             <span className="text-lg">{icon}</span>
             <span>{label}</span>
