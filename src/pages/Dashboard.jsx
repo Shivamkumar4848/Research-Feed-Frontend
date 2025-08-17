@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaFilter, FaEye } from "react-icons/fa";
-import { FaBookReader } from "react-icons/fa"; // Example vector icon
+import { FaBookReader } from "react-icons/fa";
 import FilterModal from "../components/FilterModal";
 import useFilters from "../hooks/useFilters";
 import data from "../data/dummyData.json";
@@ -63,7 +63,6 @@ export default function Dashboard() {
                 </div>
             </div>
 
-            {/* Filter Modal */}
             <FilterModal
                 isOpen={open}
                 onClose={() => setOpen(false)}
