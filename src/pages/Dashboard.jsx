@@ -24,7 +24,7 @@ const actionButtons = [
 export default function Dashboard() {
     const navigate = useNavigate();
     const { filters, updateFilters } = useFilters();
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const availableTags = [...new Set(data.flatMap(a => a.tags))];
     const availableCategories = [...new Set(data.flatMap(a => a.category))];
