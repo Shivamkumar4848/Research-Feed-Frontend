@@ -35,9 +35,22 @@ export default function Sidebar({ isOpen, closeSidebar }) {
                             />
                         ))}
                     </nav>
-                    <div className="mt-auto text-xs text-gray-500 dark:text-gray-400">
-                        v1.0
+                    <div className="mt-auto flex items-center gap-3 border-t pt-4 border-gray-200 dark:border-gray-700">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center text-white font-bold">
+                            S
+                        </div>
+                        <div>
+                            <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                                Shivam Singh
+                            </p>
+                            <p className="mt-auto text-xs text-gray-500 dark:text-gray-400">
+                                v1.0
+                            </p>
+                        </div>
                     </div>
+                    {/* <div className="mt-auto text-xs text-gray-500 dark:text-gray-400">
+                        v1.0
+                    </div> */}
                 </div>
             </aside>
         </>
@@ -49,9 +62,11 @@ function SideLink({ to, label, icon }) {
         <NavLink
             to={to}
             className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-2 rounded transition-colors ${isActive
-                    ? "bg-violet-600 text-white"
-                    : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                `flex items-center gap-3 px-4 py-2 rounded-md 
+                transition-all duration-200 ease-in-out
+                ${isActive
+                    ? "bg-violet-600 text-white shadow-md"
+                    : "text-gray-700 dark:text-gray-200 hover:bg-violet-50 dark:hover:bg-violet-700 hover:text-violet-600 dark:hover:text-white hover:pl-5"
                 }`
             }
         >
@@ -60,3 +75,4 @@ function SideLink({ to, label, icon }) {
         </NavLink>
     );
 }
+
