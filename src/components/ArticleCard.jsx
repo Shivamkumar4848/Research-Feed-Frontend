@@ -96,13 +96,13 @@ export default function ArticleCard({ article }) {
                         </p>
 
                         <p className="mt-1 text-sm text-gray-800 dark:text-gray-300 line-clamp-3 flex-1">
-                            <span className="font-medium">Abstract:</span> {article.abstract}
+                            <span className="font-medium text-violet-400">Abstract:</span> {article.abstract}
                         </p>
 
 
                         {summary ? (
                             <p className="mt-1 text-sm text-gray-800 dark:text-gray-300 line-clamp-3 flex-1">
-                                <span className="font-medium">Summary:</span> {summary}
+                                <span className="font-medium text-emerald-500">Summary:</span> {summary}
                             </p>
                         ) : (
                             <div className="flex flex-col justify-center items-center flex-1 text-gray-400">
@@ -133,9 +133,12 @@ export default function ArticleCard({ article }) {
 
                         {!loading && summary && (
                             <>
-                                <p className="text-gray-800 dark:text-gray-200 overflow-y-auto max-h-56">
-                                    <span className="font-medium">Summary:</span> {summary}
-                                </p>
+                                <h3 className="text-base font-semibold text-gray-800 dark:text-gray-100 mb-2 border-b border-emerald-400">
+                                    Summary
+                                </h3>
+                                <div className="flex-1 my-2 overflow-y-auto text-justify text-sm text-gray-700 dark:text-gray-300 max-h-56">
+                                    {summary}
+                                </div>
                                 <button
                                     onClick={() => setIsFlipped(false)}
                                     className="mt-3 px-3 py-1 text-sm bg-violet-600 text-white rounded hover:bg-violet-700"
