@@ -13,7 +13,7 @@ export default function Articles() {
     const [loading, setLoading] = useState(true);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 6;
+    const itemsPerPage = 8;
 
     const availableTags = useMemo(() => [...new Set(data.flatMap(a => a.tags))], []);
     const availableCategories = useMemo(() => [...new Set(data.flatMap(a => a.category))], []);
@@ -41,7 +41,6 @@ export default function Articles() {
         });
     }, [filters]);
 
-    // Pagination logic
     const totalPages = Math.ceil(filtered.length / itemsPerPage);
     const paginatedArticles = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
@@ -59,7 +58,7 @@ export default function Articles() {
                 <p className="text-gray-600 dark:text-gray-400">No articles match your filters.</p>
             ) : (
                 <>
-                    <div className="flex flex-wrap justify-start gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
                         {paginatedArticles.map((article, idx) => (
                             <ArticleCard key={idx} article={article} />
                         ))}

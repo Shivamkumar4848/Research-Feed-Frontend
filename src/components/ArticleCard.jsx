@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AuthorAvatar from "../components/Avatar";
+import { FaRegFileAlt } from "react-icons/fa";
 
 export default function ArticleCard({ article }) {
     const [loading, setLoading] = useState(false);
@@ -7,7 +8,18 @@ export default function ArticleCard({ article }) {
     const [error, setError] = useState("");
     const [isFlipped, setIsFlipped] = useState(false);
 
+    useEffect(() => {
+        const stored = localStorage.getItem(`summary-${article.doi}`);
+        if (stored) setSummary(stored);
+    }, [article.doi]);
+
     const handleSummarize = async () => {
+        if (summary) {
+            setIsFlipped(true);
+            return;
+        }
+
+
         setIsFlipped(true);
         setLoading(true);
         setSummary("");
@@ -26,7 +38,7 @@ export default function ArticleCard({ article }) {
                 setError("Failed to summarize.");
             }
         } catch {
-            setError("Error: Could not fetch summary.");
+            setError("Could not fetch summary.");
         } finally {
             setLoading(false);
         }
@@ -39,7 +51,6 @@ export default function ArticleCard({ article }) {
                     className={`relative w-full h-full transition-transform duration-700 ${isFlipped ? "rotate-y-180" : ""}`}
                     style={{ transformStyle: "preserve-3d" }}
                 >
-                    {/* Front */}
                     <div
                         className="absolute w-full h-full bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 border border-gray-200 dark:border-gray-700 transition-colors duration-500 flex flex-col"
                         style={{ backfaceVisibility: "hidden" }}
@@ -51,7 +62,6 @@ export default function ArticleCard({ article }) {
                             {article.journal} • {article.publication_date}
                         </p>
 
-                        {/* Author Avatars */}
                         <div className="flex flex-wrap gap-2 mb-2">
                             {(article.authors || []).map((author, idx) => (
                                 <AuthorAvatar key={idx} name={author} />
@@ -89,16 +99,27 @@ export default function ArticleCard({ article }) {
                             <span className="font-medium">Abstract:</span> {article.abstract}
                         </p>
 
+
+                        {summary ? (
+                            <p className="mt-1 text-sm text-gray-800 dark:text-gray-300 line-clamp-3 flex-1">
+                                <span className="font-medium">Summary:</span> {summary}
+                            </p>
+                        ) : (
+                            <div className="flex flex-col justify-center items-center flex-1 text-gray-400">
+                                <FaRegFileAlt className="text-5xl mb-2" />
+                                <p>No summary yet</p>
+                            </div>
+                        )}
+
                         <button
                             onClick={handleSummarize}
                             disabled={loading}
                             className="mt-3 px-3 py-1.5 text-sm bg-violet-600 text-white rounded hover:bg-violet-700 disabled:opacity-50"
                         >
-                            Summarize
+                            {summary ? "Show Summary" : "Summarize"}
                         </button>
                     </div>
 
-                    {/* Back */}
                     <div
                         className="absolute w-full h-full bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 border border-gray-200 dark:border-gray-700 transition-colors duration-500 rotate-y-180 flex flex-col justify-center items-center text-center"
                         style={{ backfaceVisibility: "hidden" }}

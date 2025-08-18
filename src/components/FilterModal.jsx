@@ -30,20 +30,31 @@ export default function FilterModal({
         onClose();
     };
 
+    const clearFilters = () => {
+        setTags([]);
+        setCategories([]);
+        setStartDate("");
+        setEndDate("");
+        onApply({ tags: [], categories: [], startDate: "", endDate: "" });
+        onClose();
+    };
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
-            <div className="w-full max-w-lg bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl">
+            <div className="w-full max-w-lg bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl max-h-[80vh] overflow-y-auto">
                 <h2 className="text-lg font-semibold mb-4">Set Filters</h2>
 
                 <section className="mb-4">
                     <p className="mb-2 font-medium">Tags</p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto p-1 border rounded dark:border-gray-700">
                         {availableTags.map(tag => (
                             <button
                                 key={tag}
                                 onClick={() => toggle(tag, tags, setTags)}
                                 className={`px-3 py-1 rounded-full border text-sm
-                  ${tags.includes(tag) ? "bg-violet-600 text-white border-violet-600" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-transparent"}`}
+                      ${tags.includes(tag)
+                                        ? "bg-violet-600 text-white border-violet-600"
+                                        : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-transparent"}`}
                             >
                                 {tag}
                             </button>
@@ -53,13 +64,15 @@ export default function FilterModal({
 
                 <section className="mb-4">
                     <p className="mb-2 font-medium">Categories</p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto p-1 border rounded dark:border-gray-700">
                         {availableCategories.map(cat => (
                             <button
                                 key={cat}
                                 onClick={() => toggle(cat, categories, setCategories)}
                                 className={`px-3 py-1 rounded-full border text-sm
-                  ${categories.includes(cat) ? "bg-violet-600 text-white border-violet-600" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-transparent"}`}
+                      ${categories.includes(cat)
+                                        ? "bg-violet-600 text-white border-violet-600"
+                                        : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-transparent"}`}
                             >
                                 {cat}
                             </button>
@@ -69,7 +82,7 @@ export default function FilterModal({
 
                 <section className="mb-6">
                     <p className="mb-2 font-medium">Publication Date Range</p>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 flex-col sm:flex-row">
                         <input
                             type="date"
                             value={startDate}
@@ -86,10 +99,13 @@ export default function FilterModal({
                 </section>
 
                 <div className="flex justify-end gap-2">
+                    <button onClick={clearFilters} className="px-3 py-1.5 rounded bg-red-500 text-white hover:bg-red-600">
+                        Clear
+                    </button>
                     <button onClick={onClose} className="px-3 py-1.5 rounded bg-gray-200 dark:bg-gray-700">
                         Cancel
                     </button>
-                    <button onClick={apply} className="px-3 py-1.5 rounded bg-violet-600 text-white">
+                    <button onClick={apply} className="px-3 py-1.5 rounded bg-violet-600 text-white hover:bg-violet-700">
                         Apply
                     </button>
                 </div>
