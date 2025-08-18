@@ -24,7 +24,7 @@ const actionButtons = [
 export default function Dashboard() {
     const navigate = useNavigate();
     const { filters, updateFilters } = useFilters();
-    const [open, setOpen] = useState(true); // Ask filters on first visit
+    const [open, setOpen] = useState(true);
 
     const availableTags = [...new Set(data.flatMap(a => a.tags))];
     const availableCategories = [...new Set(data.flatMap(a => a.category))];
@@ -35,7 +35,6 @@ export default function Dashboard() {
 
     return (
         <div className="space-y-6 flex flex-col items-center justify-center min-h-[80vh] text-center">
-            {/* Heading */}
             <div>
                 <h2 className="text-3xl font-bold mb-2">Dashboard</h2>
                 <p className="text-gray-700 dark:text-gray-300 max-w-md">
@@ -43,12 +42,10 @@ export default function Dashboard() {
                 </p>
             </div>
 
-            {/* Illustration / Vector */}
             <div className="flex justify-center items-center">
                 <FaBookReader className="text-violet-600 dark:text-violet-400 text-[120px]" />
             </div>
 
-            {/* Action Buttons */}
             <div className="flex items-center justify-center">
                 <div className="flex gap-3">
                     {actionButtons.map((btn) => (
