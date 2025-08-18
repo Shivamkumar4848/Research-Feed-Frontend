@@ -12,7 +12,7 @@ export default function Navbar({ darkMode, toggleDarkMode, onHamburger }) {
             </button>
 
             <h1 className="text-lg sm:text-xl font-bold text-violet-600 dark:text-white lg:invisible">
-                Research<span className="text-gray-800">Feed</span>
+                Research<span className="text-gray-800 dark:text-white">Feed</span>
             </h1>
 
             <button
