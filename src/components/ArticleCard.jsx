@@ -139,7 +139,7 @@ export default function ArticleCard({ article }) {
                                 </p>
                                 <button
                                     onClick={() => setShowAbstractModal(true)}
-                                    className="absolute right-0 text-xs text-violet-600 underline bg-white dark:bg-gray-800 px-1"
+                                    className="absolute left-0 text-xs text-violet-600 underline bg-white dark:bg-gray-800 py-1"
                                 >
                                     Read More
                                 </button>
@@ -147,8 +147,7 @@ export default function ArticleCard({ article }) {
 
                             {summary ? (
                                 <p className="mt-1 text-sm text-gray-800 dark:text-gray-300 truncate-3 flex-1">
-                                    <span className="font-medium text-emerald-500">Summary:</span>{" "}
-                                    {summary}
+                                    <span className="font-medium text-emerald-500">Summary:</span> {summary}
                                 </p>
                             ) : (
                                 <div className="flex flex-col justify-center items-center flex-1 text-gray-400">
@@ -156,6 +155,8 @@ export default function ArticleCard({ article }) {
                                     <p>No summary yet</p>
                                 </div>
                             )}
+
+
 
                             <button
                                 onClick={handleSummarize}
