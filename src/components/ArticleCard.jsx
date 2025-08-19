@@ -75,7 +75,7 @@ export default function ArticleCard({ article }) {
 
                             {article.authors?.length > 0 && (
                                 <p className="text-xs text-gray-700 dark:text-gray-300 mb-2">
-                                    <span className="font-semibold">AUTHOR:</span>{" "}
+                                    <span className="font-semibold">Author:</span>{" "}
                                     {article.authors.join(", ")}
                                 </p>
                             )}
@@ -139,7 +139,7 @@ export default function ArticleCard({ article }) {
                                 </p>
                                 <button
                                     onClick={() => setShowAbstractModal(true)}
-                                    className="absolute bottom-0 right-0 text-xs text-violet-600 underline bg-white dark:bg-gray-800 px-1"
+                                    className="absolute right-0 text-xs text-violet-600 underline bg-white dark:bg-gray-800 px-1"
                                 >
                                     Read More
                                 </button>

@@ -7,7 +7,7 @@
     "category": ["Machine Learning", "Time Series"],
     "tags": ["transformers", "forecasting", "deep-learning"],
     "doi": "10.1000/jair.2024.12345",
-    "abstract": "We explore transformer architectures for multi-horizon time series forecasting and compare them with classical baselines."
+    "abstract": "This work explores transformer architectures for multi-horizon time series forecasting, comparing them with statistical and recurrent baselines. We evaluate their ability to capture long-term dependencies, scalability, and robustness to irregular patterns. Experiments on finance, energy, and climate datasets show transformers outperforming classical models in accuracy and adaptability. We further analyze interpretability and training efficiency. Results highlight transformers as a powerful and flexible framework for real-world forecasting, bridging deep learning and practical time series applications."
   },
   {
     "title": "Efficient Graph Neural Networks on Large-Scale Data",
@@ -17,7 +17,7 @@
     "category": ["Graph Learning"],
     "tags": ["gnn", "scalability", "sampling"],
     "doi": "10.1109/TPAMI.2025.54321",
-    "abstract": "This paper presents scalable GNN techniques using subgraph sampling and memory-efficient training strategies."
+    "abstract": "We propose scalable Graph Neural Network (GNN) techniques that leverage subgraph sampling and memory-efficient training strategies. Tested on billion-scale datasets, including social networks and citation graphs, our approach reduces resource requirements while maintaining predictive accuracy. We explore trade-offs between sampling depth, convergence speed, and distributed training performance. Results demonstrate improved scalability and efficiency, enabling deployment of GNNs in industrial environments. This study advances GNN adoption for large, real-world applications where computational efficiency is essential."
   },
   {
     "title": "Retrieval-Augmented Generation for Scientific QA",
@@ -27,106 +27,76 @@
     "category": ["NLP", "Information Retrieval"],
     "tags": ["rag", "llm", "qa"],
     "doi": "10.1038/s41557-025-00001",
-    "abstract": "We evaluate RAG pipelines for domain-specific scientific question answering with ablation on retrieval depth and reranking."
+    "abstract": "This study investigates Retrieval-Augmented Generation (RAG) pipelines for scientific question answering. We evaluate retrieval depth, reranking strategies, and domain-specific knowledge integration. Experiments across chemistry, physics, and biology benchmarks show retrieval quality strongly influences response accuracy. Ablation studies highlight efficiency-accuracy trade-offs. Findings suggest that RAG systems significantly outperform pure generative models in factual reliability, making them well-suited for knowledge-intensive scientific domains where correctness is critical for research and decision-making."
   },
   {
     "title": "AI in Healthcare",
     "journal": "Journal of Medical AI",
     "publication_date": "2025-03-12",
     "authors": ["John Doe", "Jane Smith"],
-    "doi": "10.1234/example1",
-    "abstract": "This study explores AI applications in diagnosis and treatment planning.",
+    "category": ["Medical Technology", "Artificial Intelligence"],
     "tags": ["AI", "Healthcare", "Machine Learning"],
-    "category": ["Medical Technology", "Artificial Intelligence"]
+    "doi": "10.1234/example1",
+    "abstract": "We explore the role of AI in healthcare with a focus on diagnosis and treatment planning. By analyzing applications across imaging, predictive analytics, and personalized medicine, we highlight improvements in efficiency and patient outcomes. Case studies demonstrate AI’s capacity to detect diseases earlier and assist clinical decision-making. Challenges related to interpretability, ethics, and data privacy are also discussed. Our findings emphasize the transformative potential of AI while underscoring the need for trustworthy and explainable healthcare solutions."
   },
   {
     "title": "Neural Networks in Cardiology",
     "journal": "Cardio Science",
     "publication_date": "2025-02-10",
     "authors": ["Alex Johnson"],
-    "doi": "10.1234/example2",
-    "abstract": "We analyze neural networks for heart disease detection and prediction.",
+    "category": ["Heart Health", "Medical Technology"],
     "tags": ["Neural Networks", "Cardiology"],
-    "category": ["Heart Health", "Medical Technology"]
+    "doi": "10.1234/example2",
+    "abstract": "This paper analyzes neural networks for detecting and predicting heart disease. Using structured patient data, imaging, and ECG signals, we assess performance across multiple clinical tasks. Experiments show that deep learning models outperform traditional diagnostic methods in early disease detection and risk stratification. We also discuss interpretability and physician integration to enhance trust in clinical adoption. Findings demonstrate neural networks as effective tools for cardiology, supporting improved patient monitoring and personalized treatment planning."
   },
   {
     "title": "Blockchain in Supply Chain",
     "journal": "Logistics Tech Journal",
     "publication_date": "2025-01-25",
     "authors": ["Maria Lopez", "Chen Wei"],
-    "doi": "10.1234/example3",
-    "abstract": "Exploring blockchain's role in enhancing transparency and efficiency in supply chains.",
+    "category": ["Logistics", "Blockchain Technology"],
     "tags": ["Blockchain", "Supply Chain", "Transparency"],
-    "category": ["Logistics", "Blockchain Technology"]
+    "doi": "10.1234/example3",
+    "abstract": "We examine blockchain’s role in enhancing transparency, traceability, and efficiency within supply chains. Case studies from logistics and manufacturing show improved product tracking, fraud prevention, and data integrity. We analyze implementation challenges, including scalability, interoperability, and cost. Findings indicate blockchain provides significant value in improving stakeholder trust and reducing inefficiencies. Our study concludes that blockchain has strong potential to transform global supply chains, enabling more secure and transparent logistics operations."
   },
   {
     "title": "Climate Change Impact on Agriculture",
     "journal": "Global Environmental Studies",
     "publication_date": "2024-12-05",
     "authors": ["Priya Sharma", "Michael Brown"],
-    "doi": "10.1234/example4",
-    "abstract": "An overview of climate change effects on global food production.",
+    "category": ["Environmental Science", "Agricultural Studies"],
     "tags": ["Climate Change", "Agriculture", "Sustainability"],
-    "category": ["Environmental Science", "Agricultural Studies"]
+    "doi": "10.1234/example4",
+    "abstract": "We provide an overview of climate change effects on global agriculture and food security. Our analysis highlights rising temperatures, shifting precipitation patterns, and increased frequency of extreme weather events. These changes reduce crop yields, threaten biodiversity, and disrupt supply chains. Case studies from Asia, Africa, and South America illustrate regional vulnerabilities. Mitigation strategies such as resilient crop varieties, smart irrigation, and sustainable practices are discussed. Findings emphasize the urgent need for adaptation to secure future food production."
   },
   {
     "title": "Quantum Computing for Cryptography",
     "journal": "Journal of Quantum Technologies",
     "publication_date": "2025-04-01",
     "authors": ["Ethan Wright", "Sofia Patel"],
-    "doi": "10.1234/example5",
-    "abstract": "Evaluating quantum algorithms for secure encryption and decryption methods.",
+    "category": ["Computer Science", "Cybersecurity", "Quantum Technology"],
     "tags": ["Quantum Computing", "Cryptography", "Security"],
-    "category": ["Computer Science", "Cybersecurity", "Quantum Technology"]
+    "doi": "10.1234/example5",
+    "abstract": "This paper evaluates quantum algorithms for cryptographic applications, focusing on encryption and decryption security. We analyze Shor’s and Grover’s algorithms, discussing their implications for existing cryptographic standards. Experimental simulations illustrate potential vulnerabilities in RSA and symmetric key systems under quantum attack. We also explore post-quantum cryptographic approaches designed to withstand such threats. Our findings emphasize the dual role of quantum computing as both a risk and a solution for future cybersecurity."
   },
   {
     "title": "Renewable Energy Storage Solutions",
     "journal": "Energy Innovations",
     "publication_date": "2025-03-20",
     "authors": ["Amina Khan", "Carlos Mendes"],
-    "doi": "10.1234/example6",
-    "abstract": "A comprehensive review of battery technologies for renewable energy storage.",
+    "category": ["Energy", "Environmental Science"],
     "tags": ["Renewable Energy", "Batteries", "Sustainability"],
-    "category": ["Energy", "Environmental Science"]
+    "doi": "10.1234/example6",
+    "abstract": "We review renewable energy storage technologies with a focus on battery systems supporting solar and wind integration. Lithium-ion, flow batteries, and emerging solid-state designs are evaluated for efficiency, cost, and sustainability. Case studies demonstrate how storage enhances grid stability and renewable adoption. We discuss challenges in scaling, resource availability, and recycling. Our analysis concludes that advanced storage solutions are essential for achieving reliable and sustainable clean energy transitions worldwide."
   },
   {
     "title": "Machine Learning in Finance",
     "journal": "FinTech Review",
     "publication_date": "2025-02-28",
     "authors": ["Liam O'Connor", "Haruto Tanaka"],
-    "doi": "10.1234/example7",
-    "abstract": "Application of supervised and unsupervised learning techniques in financial risk assessment.",
+    "category": ["Finance", "Artificial Intelligence"],
     "tags": ["Machine Learning", "Finance", "Risk Management"],
-    "category": ["Finance", "Artificial Intelligence"]
-  },
-  {
-    "title": "Deep Sea Exploration Technologies",
-    "journal": "Marine Science Today",
-    "publication_date": "2025-01-15",
-    "authors": ["Olivia Martinez"],
-    "doi": "10.1234/example8",
-    "abstract": "Innovations in robotics and AI for deep-sea environmental monitoring.",
-    "tags": ["Robotics", "Oceanography", "Marine Life"],
-    "category": ["Marine Science", "Robotics"]
-  },
-  {
-    "title": "Augmented Reality in Education",
-    "journal": "EdTech Advances",
-    "publication_date": "2024-11-30",
-    "authors": ["Noah Kim", "Emily Davis"],
-    "doi": "10.1234/example9",
-    "abstract": "Assessing the effectiveness of AR tools in improving student engagement and retention.",
-    "tags": ["Augmented Reality", "Education", "Technology"],
-    "category": ["Education Technology", "Augmented Reality"]
-  },
-  {
-    "title": "Space-Based Solar Power Systems",
-    "journal": "Aerospace Energy Journal",
-    "publication_date": "2024-10-22",
-    "authors": ["Rajesh Gupta", "Hannah Lee"],
-    "doi": "10.1234/example10",
-    "abstract": "Feasibility study of harnessing solar energy from space and transmitting it to Earth.",
-    "tags": ["Solar Power", "Space", "Energy"],
-    "category": ["Aerospace", "Renewable Energy"]
+    "doi": "10.1234/example7",
+    "abstract": "This paper explores the application of machine learning in financial risk assessment and prediction. We evaluate supervised and unsupervised models for fraud detection, credit scoring, and portfolio optimization. Case studies highlight how advanced algorithms improve decision-making and reduce losses. We also analyze challenges related to interpretability, regulatory compliance, and bias. Results indicate that machine learning significantly enhances financial analytics while requiring careful governance for safe adoption in highly regulated markets."
   }
 ]
