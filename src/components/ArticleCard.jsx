@@ -1,4 +1,3 @@
-// src/components/ArticleCard.jsx
 import { useState, useEffect } from "react";
 import { FaRegFileAlt } from "react-icons/fa";
 import Modal from "./Modal";

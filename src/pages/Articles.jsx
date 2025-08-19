@@ -41,7 +41,6 @@ export default function Articles() {
         });
     }, [filters]);
 
-
     const totalPages = Math.ceil(filtered.length / itemsPerPage);
     const paginatedArticles = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 

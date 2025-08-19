@@ -54,7 +54,6 @@ export default function FilterModal({
         onClose();
     };
 
-
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
             <div className="w-full max-w-lg bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl max-h-[80vh] overflow-y-auto">
@@ -141,7 +140,6 @@ export default function FilterModal({
                         />
                     </div>
                 </section>
-
 
                 <div className="flex flex-col sm:flex-row gap-2 justify-center sm:justify-center lg:justify-end mt-4">
                     <button
