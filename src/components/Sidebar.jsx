@@ -12,14 +12,15 @@ export default function Sidebar({ isOpen, closeSidebar }) {
         <>
             <div
                 onClick={closeSidebar}
-                className={`fixed inset-0 bg-black/40 z-40 lg:hidden ${isOpen ? "block" : "hidden"
-                    }`}
+                className={`fixed inset-0 bg-black/40 z-40 md:hidden ${isOpen ? "block" : "hidden"}`}
             />
+
             <aside
                 className={`fixed top-0 left-0 z-50 w-64 h-full bg-white dark:bg-gray-800 shadow-md border-r border-gray-200 dark:border-gray-700 transform transition-transform duration-200 
-          lg:translate-x-0 lg:block
-          ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+    md:translate-x-0 md:block
+    ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
             >
+
                 <div className="p-4 flex flex-col h-full">
                     <div className="text-2xl font-bold font-mono mb-6 cursor-default">
                         <span className="text-violet-600">Research</span>

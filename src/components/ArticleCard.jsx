@@ -16,11 +16,6 @@ export default function ArticleCard({ article }) {
         if (stored) setSummary(stored);
     }, [article.doi]);
 
-    useEffect(() => {
-        const stored = localStorage.getItem(`summary-${article.doi}`);
-        if (stored) setSummary(stored);
-    }, [article.doi]);
-
     const handleSummarize = async () => {
         if (summary) {
             setIsFlipped(true);
