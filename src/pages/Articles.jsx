@@ -25,21 +25,38 @@ export default function Articles() {
 
     const filtered = useMemo(() => {
         return data.filter(article => {
-            const hasMatchingTag =
-                filters.tags?.length === 0 ||
-                filters.tags.some(tag => article.tags?.includes(tag));
+            let byTags = false;
+            if (filters.tags?.length) {
+                byTags = filters.tags.some(tag => (article.tags || []).includes(tag));
+            }
 
-            const hasMatchingCategory =
-                filters.categories?.length === 0 ||
-                filters.categories.some(cat => article.category?.includes(cat));
+            let byCats = false;
+            if (filters.categories?.length) {
+                byCats = filters.categories.some(cat => (article.category || []).includes(cat));
+            }
 
-            const pubDate = new Date(article.publication_date);
-            const inStartRange = !filters.startDate || pubDate >= new Date(filters.startDate);
-            const inEndRange = !filters.endDate || pubDate <= new Date(filters.endDate);
 
-            return hasMatchingTag && hasMatchingCategory && inStartRange && inEndRange;
+            let byDate = true;
+            if (filters.startDate || filters.endDate) {
+                const pubDate = new Date(article.publication_date);
+
+                if (filters.startDate && pubDate < new Date(filters.startDate)) {
+                    byDate = false;
+                }
+
+                if (filters.endDate && pubDate > new Date(filters.endDate)) {
+                    byDate = false;
+                }
+            }
+
+            const byTagsOrCats = (filters.tags?.length || filters.categories?.length)
+                ? (byTags || byCats)
+                : true;
+
+            return byTagsOrCats && byDate;
         });
     }, [filters]);
+
 
     const totalPages = Math.ceil(filtered.length / itemsPerPage);
     const paginatedArticles = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
