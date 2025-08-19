@@ -1,4 +1,3 @@
-// src/components/ArticleCard.jsx
 import { useState, useEffect } from "react";
 import { FaRegFileAlt } from "react-icons/fa";
 import Modal from "./Modal";
@@ -11,6 +10,11 @@ export default function ArticleCard({ article }) {
     const [showAbstractModal, setShowAbstractModal] = useState(false);
     const [showTagsModal, setShowTagsModal] = useState(false);
     const [showCategoriesModal, setShowCategoriesModal] = useState(false);
+
+    useEffect(() => {
+        const stored = localStorage.getItem(`summary-${article.doi}`);
+        if (stored) setSummary(stored);
+    }, [article.doi]);
 
     useEffect(() => {
         const stored = localStorage.getItem(`summary-${article.doi}`);
